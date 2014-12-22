@@ -1,0 +1,22 @@
+{
+  "name": "demo-pouchdb-replication",
+  "version": "0.1.0",
+  "description": "",
+  "main": "test.js",
+  "dependencies": {
+    "bluebird": "^2.4.2",
+    "chai": "^1.10.0",
+    "memorystream": "^0.2.0",
+    "mocha": "^2.0.1",
+    "pouchdb": "^3.2.0",
+    "pouchdb-replication-stream": "^1.0.0"
+  },
+  "devDependencies": {
+    "mocha": "^2.0.1"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC"
+}
