@@ -8,6 +8,7 @@ PouchDB.plugin(replicationStream.plugin);
 PouchDB.adapter('writableStream', replicationStream.adapters.writableStream);
 
 describe('pouchdb-replication-stream replication', function() {
+  this.timeout(60000);
 
   it('should replicate identical _revs into the destination database', function(done) {
 
@@ -24,12 +25,13 @@ describe('pouchdb-replication-stream replication', function() {
       {_id: 'testdoc2'}
     ])
       .then(function() {
-        return Promise.props({
-          source: db1.dump(stream),
-          dest: db2.load(stream)
-        })
+        return db1.dump(stream);
+      })
+      .then(function () {
+        return db2.load(stream);
       })
       .then(function() {
+        console.log('yo again');
         return Promise.props({
           db1: db1.allDocs(),
           db2: db2.allDocs()
